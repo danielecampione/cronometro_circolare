@@ -11,6 +11,13 @@ function startStop() {
     isRunning = !isRunning;
 }
 
+function resetCronometro() {
+    clearInterval(timer);
+    isRunning = false;
+    seconds = 0;
+    document.getElementById('cronometro').textContent = '00:00:00';
+}
+
 function updateCronometro() {
     seconds++;
     const hours = String(Math.floor(seconds / 3600)).padStart(2, '0');
